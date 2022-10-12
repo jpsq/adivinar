@@ -43,7 +43,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
         acerca = new JMenu("Acerca de");
         acerca.setBackground(new Color(222, 222, 222));
         acerca.setForeground(new Color(60, 233, 60));
-        acerca.setFont(new Font3("Arial", 1, 12));
+        acerca.setFont(new Font("Arial", 1, 12));
         barra.add(acerca);
 
         creador = new JMenuItem("Programador");
