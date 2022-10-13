@@ -3,10 +3,10 @@ import java.awt.event.*;
 import java.awt.*;
 import java.lang.Math;
 
+
 public class Adivinar2 extends JFrame implements ActionListener {
 
     //COMPONENTES VISUALES:
-
     private JLabel etiqueta, imagen, mensaje1, mensaje2, intentos, laCarta;
     private JTextArea area;
     private JScrollPane scroll;
@@ -16,6 +16,9 @@ public class Adivinar2 extends JFrame implements ActionListener {
     private JMenu acerca;
     private JMenuItem creador;
     public ImageIcon imagenDeLaCarta;
+
+    //variables de control:
+
 	boolean noEsPrimerIntento = false;
     String cartaPalo, inPalo, paloAnterior = "", entradaNumero;
     int inNumero, cartaNumero, i, indiN, indiS;
@@ -27,11 +30,10 @@ public class Adivinar2 extends JFrame implements ActionListener {
     String palos[] = {"corazones", "diamantes", "treboles", "picas"}; // array con los posibles palos y cartas, seran usados para generar la carta aleatoriamente con Math.random
     int numeros[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
-    public Adivinar2() {
+    public Adivinar2() { //constructor 
 
         setLayout(null);
         
-
         setIconImage(new ImageIcon(getClass().getResource("images/icon.ico")).getImage());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Adivina la carta");
@@ -43,7 +45,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
         acerca = new JMenu("Acerca de");
         acerca.setBackground(new Color(222, 222, 222));
         acerca.setForeground(new Color(60, 233, 60));
-        acerca.setFont(new Font("Arial", 1, 12));
+        acerca.setFont(new Font ("Arial", 1, 12));
         barra.add(acerca);
 
         creador = new JMenuItem("Programador");
@@ -129,6 +131,13 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
     public void mostrarCarta(String direccion) {
 
+    /**
+    * muestra la imagen de la carta en el display
+    *
+    * @param <direccion> direccion de la imagen para el ImageIcon
+    * @return void
+    */
+
         sacarImagenInicial();
 		
         this.imagenDeLaCarta = new ImageIcon(direccion);
@@ -138,12 +147,10 @@ public class Adivinar2 extends JFrame implements ActionListener {
         this.laCarta.setVisible(true);
 		
 		/*
-
 		JLabel carta = new JLabel(new ImageIcon(direccion));
 		carta.setBounds(357, 60, 65, 98);
 		add(carta);
-		carta.setVisible(true);
-		
+		carta.setVisible(true);		
 		*/
     }
 
