@@ -156,216 +156,187 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
     public void preguntarYmostrarCartas() {
 
-        if (cartaPalo.equals("corazones") && cartaNumero == 2) {
-
-            mostrarCarta("images/2C.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 3) {
-
-            mostrarCarta("images/3C.png");;
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 4) {
-
-            mostrarCarta("images/4C.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 5) {
-
-            mostrarCarta("images/5C.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 6) {
-
-            mostrarCarta("images/6C.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 7) {
-
-            mostrarCarta("images/7C.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 8) {
-
-            mostrarCarta("images/8C.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 9) {
-
-            sacarImagenInicial();
-            mostrarCarta("images/9C.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 10) {
-
-            mostrarCarta("images/10C.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 11) {
-
-            mostrarCarta("images/JC.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 12) {
-
-            mostrarCarta("images/QC.png");;
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 13) {
-
-            mostrarCarta("images/KC.png");
-
-        } else if (cartaPalo.equals("corazones") && cartaNumero == 14) {
-
-            mostrarCarta("images/AC.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 2) {
-
-            mostrarCarta("images/2t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 3) {
-
-            mostrarCarta("images/3t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 4) {
-
-            mostrarCarta("images/4t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 5) {
-
-            mostrarCarta("images/5t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 6) {
-
-            mostrarCarta("images/6t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 7) {
-
-            mostrarCarta("images/7t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 8) {
-
-            mostrarCarta("images/8t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 9) {
-
-            mostrarCarta("images/9t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 10) {
-
-            mostrarCarta("images/10t.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 11) {
-
-            mostrarCarta("images/Jt.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 12) {
-
-            mostrarCarta("images/Qt.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 13) {
-
-            mostrarCarta("images/Kt.png");
-
-        } else if (cartaPalo.equals("treboles") && cartaNumero == 14) {
-
-            mostrarCarta("images/At.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 2) {
-
-            mostrarCarta("images/2d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 3) {
-
-            mostrarCarta("images/3d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 4) {
-
-            mostrarCarta("images/4d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 5) {
-
-            mostrarCarta("images/5d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 6) {
-
-            mostrarCarta("images/6d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 7) {
-
-            mostrarCarta("images/7d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 8) {
-
-            mostrarCarta("images/8d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 9) {
-
-            mostrarCarta("images/9d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 10) {
-
-            mostrarCarta("images/10d.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 11) {
-
-            mostrarCarta("images/Jd.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 12) {
-
-            mostrarCarta("images/Qd.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 13) {
-
-            mostrarCarta("images/Kd.png");
-
-        } else if (cartaPalo.equals("diamantes") && cartaNumero == 14) {
-
-            mostrarCarta("images/Ad.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 2) {
-
-            mostrarCarta("images/2p.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 3) {
-
-            mostrarCarta("images/3p.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 4) {
-
-            mostrarCarta("images/4p.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 5) {
-
-            mostrarCarta("images/5p.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 6) {
-
-            mostrarCarta("images/6p.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 7) {
-
-            mostrarCarta("images/7p.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 8) {
-
-            mostrarCarta("images/8p.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 9) {
-
-            mostrarCarta("images/9p.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 10) {
-
-            mostrarCarta("images/10p.png");
-
-        }
-        if (cartaPalo.equals("picas") && cartaNumero == 11) {
-
-            mostrarCarta("images/Jp.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 12) {
-
-            mostrarCarta("images/Qp.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 13) {
-
-            mostrarCarta("images/Kp.png");
-
-        } else if (cartaPalo.equals("picas") && cartaNumero == 14) {
-
-            mostrarCarta("images/Ap.png");
-
+        if(cartaPalo.equals("corazones")){
+
+            switch (cartaNumero) {
+                case 2:
+                    mostrarCarta("images/2C.png");
+                    break;
+                case 3:
+                    mostrarCarta("images/3C.png");
+                    break;
+                case 4:
+                    mostrarCarta("images/4C.png");
+                    break;
+                case 5:
+                    mostrarCarta("images/5C.png");
+                    break;
+                case 6:
+                    mostrarCarta("images/6C.png");
+                    break;
+                case 7:
+                    mostrarCarta("images/7C.png");
+                    break;
+                case 8:
+                    mostrarCarta("images/8C.png");
+                    break;
+                case 9:
+                    mostrarCarta("images/9C.png");
+                    break;
+                case 10:
+                    mostrarCarta("images/10C.png");
+                    break;
+                case 11:
+                    mostrarCarta("images/JC.png");
+                    break;
+                case 12:
+                    mostrarCarta("images/QC.png");
+                    break;
+                case 13:
+                    mostrarCarta("images/KC.png");
+                    break;
+                case 14:
+                    mostrarCarta("images/AC");
+                default:
+                    break;
+            }
+        
+        }else if(cartaPalo.equals("treboles")){
+        
+            switch (cartaNumero) {
+                case 2:
+                    mostrarCarta("images/2t.png");
+                    break;
+                case 3:
+                    mostrarCarta("images/3t.png");
+                    break;
+                case 4:
+                    mostrarCarta("images/4t.png");
+                    break;
+                case 5:
+                    mostrarCarta("images/5t.png");
+                    break;
+                case 6:
+                    mostrarCarta("images/6t.png");
+                    break;
+                case 7:
+                    mostrarCarta("images/7t.png");
+                    break;
+                case 8:
+                    mostrarCarta("images/8t.png");
+                    break;
+                case 9:
+                    mostrarCarta("images/9t.png");
+                    break;
+                case 10:
+                    mostrarCarta("images/10t.png");
+                    break;
+                case 11:
+                    mostrarCarta("images/Jt.png");
+                    break;
+                case 12:
+                    mostrarCarta("images/Qt.png");
+                    break;
+                case 13:
+                    mostrarCarta("images/Kt.png");
+                    break;
+                case 14:
+                    mostrarCarta("images/At.png");
+                    break;
+                default:
+                    break;
+            }
+        
+        }else if(cartaPalo.equals("diamantes")){
+        
+            switch (cartaNumero) {
+                case 2:
+                    mostrarCarta("images/2d.png");
+                    break;
+                case 3:
+                    mostrarCarta("images/3d.png");
+                    break;
+                case 4:
+                    mostrarCarta("images/4d.png");
+                    break;
+                case 5:
+                    mostrarCarta("images/5d.png");
+                    break;
+                case 6:
+                    mostrarCarta("images/6d.png");
+                    break;
+                case 7:
+                    mostrarCarta("images/7d.png");
+                    break;
+                case 8:
+                    mostrarCarta("images/8d.png");
+                    break;
+                case 9:
+                    mostrarCarta("images/9d.png");
+                    break;
+                case 10:
+                    mostrarCarta("images/10d.png");
+                    break;
+                case 11:
+                    mostrarCarta("images/Jd.png");
+                    break;
+                case 12:
+                    mostrarCarta("images/Qd.png");
+                    break;
+                case 13:
+                    mostrarCarta("images/Kd.png");
+                    break;
+                case 14:
+                    mostrarCarta("images/Ad.png");
+                    break;
+                default:
+                    break;
+            }
+        }else if(cartaPalo.equals("picas")){
+        
+            switch (cartaNumero) {
+                case 2:
+                    mostrarCarta("images/2p.png");
+                    break;
+                case 3:
+                    mostrarCarta("images/3p.png");
+                    break;
+                case 4:
+                    mostrarCarta("images/4p.png");
+                    break;
+                case 5:
+                    mostrarCarta("images/5p.png");
+                    break;
+                case 6:
+                    mostrarCarta("images/6p.png");
+                    break;
+                case 7:
+                    mostrarCarta("images/7p.png");
+                    break;
+                case 8:
+                    mostrarCarta("images/8p.png");
+                    break;
+                case 9:
+                    mostrarCarta("images/9p.png");
+                    break;
+                case 10:
+                    mostrarCarta("images/10p.png");
+                    break;
+                case 11:
+                    mostrarCarta("images/Jp.png");
+                    break;
+                case 12:
+                    mostrarCarta("images/Qp.png");
+                    break;
+                case 13:
+                    mostrarCarta("images/Kp.png");
+                    break;
+                case 14:
+                    mostrarCarta("images/Ap.png");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
