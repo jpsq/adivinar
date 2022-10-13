@@ -32,59 +32,72 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
     public Adivinar2() { //constructor 
 
+        //colores usados varias veces:
+        Color verde = new Color(70, 255, 70);
+        Color verde2 = new Color(60, 233, 60);
+        Color negro = new Color(0,0,0);
+        Color gris = new Color(222,222,222);
+        Color blanco = new Color(235,235,235);
+
+        Font arial1 = new Font ("Arial", 1, 12);
+        String welcomeText = "\n Una carta aleatoria de la baraja inglesa ha sido generada.\n\n Intente adividarla, posee 3 intentos."
+        + "\n\n Las cartas posibles son : 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | J | Q | K | A."
+        + "\n Los palos posibles son : diamantes | treboles | corazones | picas."
+        + "\n\n Pulse el boton comenzar para iniciar el juego.";
+
         setLayout(null);
         
         setIconImage(new ImageIcon(getClass().getResource("images/icon.ico")).getImage());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Adivina la carta");
-        getContentPane().setBackground(new Color(60, 233, 60));
+        getContentPane().setBackground(verde2);
 
         barra = new JMenuBar();
         setJMenuBar(barra);
 
         acerca = new JMenu("Acerca de");
-        acerca.setBackground(new Color(222, 222, 222));
-        acerca.setForeground(new Color(60, 233, 60));
-        acerca.setFont(new Font ("Arial", 1, 12));
-        barra.add(acerca);
+        acerca.setBackground(gris);
+        acerca.setForeground(verde2);
+        acerca.setFont(arial1);
+        
 
         creador = new JMenuItem("Programador");
-        creador.setForeground(new Color(0, 0, 0));
-        creador.setFont(new Font("Arial", 1, 12));
+        creador.setForeground(negro);
+        creador.setFont(arial1);
         creador.addActionListener(this);
         acerca.add(creador);
 
         etiqueta = new JLabel(" Bienvenido al juego de adivinar la carta");
         etiqueta.setBounds(10, 10, 500, 50);
         etiqueta.setFont(new Font("Arial", 3, 24));
-        etiqueta.setForeground(new Color(0, 0, 0));
+        etiqueta.setForeground(negro);
         add(etiqueta);
 
         mensaje1 = new JLabel("Ingrese el palo de la carta que cree que es:");
         mensaje1.setBounds(20, 80, 250, 25);
-        mensaje1.setFont(new Font("Arial", 1, 12));
-        mensaje1.setForeground(new Color(0, 0, 0));
+        mensaje1.setFont(arial1);
+        mensaje1.setForeground(negro);
         add(mensaje1);
 
         campo1 = new JTextField();
         campo1.setBounds(20, 105, 250, 25);
-        campo1.setBackground(new Color(222, 222, 222)); //un tipo de gris.
+        campo1.setBackground(gris); //un tipo de gris.
         campo1.setFont(new Font("Arial", 0, 12));
-        campo1.setForeground(new Color(0, 0, 0)); //negro
+        campo1.setForeground(negro);
         campo1.setEnabled(false);
         add(campo1);
 
         mensaje2 = new JLabel("Ingrese el numero de la carta que cree que es: ");
         mensaje2.setBounds(20, 170, 270, 25);
         mensaje2.setFont(new Font("Arial", 1, 12));
-        mensaje2.setForeground(new Color(0, 0, 0));
+        mensaje2.setForeground(negro);
         add(mensaje2);
 
         campo2 = new JTextField();
         campo2.setBounds(20, 195, 250, 25);
-        campo2.setBackground(new Color(222, 222, 222)); //un tipo de gris.
+        campo2.setBackground(gris); //un tipo de gris.
         campo2.setFont(new Font("Arial", 0, 12));
-        campo2.setForeground(new Color(0, 0, 0)); //negro
+        campo2.setForeground(negro); //negro
         campo2.setEnabled(false);
         add(campo2);
 
@@ -94,10 +107,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
         add(imagen);
 
         area = new JTextArea();
-        area.setText("\n Una carta aleatoria de la baraja inglesa ha sido generada.\n\n Intente adividarla, posee 3 intentos."
-                + "\n\n Las cartas posibles son : 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | J | Q | K | A."
-                + "\n Los palos posibles son : diamantes | treboles | corazones | picas."
-                + "\n\n Pulse el boton comenzar para iniciar el juego.");
+        area.setText(welcomeText);
         area.setFont(new Font("Verdana", 2, 14));
         area.setEditable(false);
         area.setForeground(new Color(0, 0, 0));
@@ -107,25 +117,25 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
         boton = new JButton("INTENTAR");
         boton.setBounds(80, 240, 120, 30);
-        boton.setBackground(new Color(235, 235, 235));
+        boton.setBackground(blanco);
         boton.setFont(new Font("Arial", 1, 16));
-        boton.setForeground(new Color(70, 255, 70)); //verde
+        boton.setForeground(verde);
         boton.addActionListener(this);
         boton.setEnabled(false);
         add(boton);
 
         comenzar = new JButton("COMENZAR");
         comenzar.setBounds(320, 240, 150, 30);
-        comenzar.setBackground(new Color(235, 235, 235));
+        comenzar.setBackground(blanco);
         comenzar.setFont(new Font("Arial", 1, 16));
-        comenzar.setForeground(new Color(70, 255, 70)); //verde
+        comenzar.setForeground(verde); //verde
         comenzar.addActionListener(this);
         add(comenzar);
 
         intentos = new JLabel("Intentos restantes: - ");
         intentos.setBounds(325, 190, 270, 25);
         intentos.setFont(new Font("Arial", 1, 14));
-        intentos.setForeground(new Color(0, 0, 0));
+        intentos.setForeground(negro);
         add(intentos);
     }
 
@@ -145,13 +155,6 @@ public class Adivinar2 extends JFrame implements ActionListener {
         this.laCarta.setBounds(357, 60, 65, 98);
         add(laCarta);
         this.laCarta.setVisible(true);
-		
-		/*
-		JLabel carta = new JLabel(new ImageIcon(direccion));
-		carta.setBounds(357, 60, 65, 98);
-		add(carta);
-		carta.setVisible(true);		
-		*/
     }
 
     public void preguntarYmostrarCartas() {
