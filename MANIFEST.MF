@@ -1,0 +1,5 @@
+Manifest-Version: 2.1
+Created-By: Jpsq
+Main-Class: Adivinar2
+X-COMMENT:Se redujo de 1200 a 550 lineas. Tambien se permiten las mayusculas en el ingreso de los palos.
+
