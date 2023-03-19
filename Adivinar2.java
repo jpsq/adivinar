@@ -3,10 +3,9 @@ import java.awt.event.*;
 import java.awt.*;
 import java.lang.Math;
 
-
 public class Adivinar2 extends JFrame implements ActionListener {
 
-    //COMPONENTES VISUALES:
+    // COMPONENTES VISUALES:
     private JLabel etiqueta, imagen, mensaje1, mensaje2, intentos, laCarta;
     private JTextArea area;
     private JScrollPane scroll;
@@ -17,36 +16,38 @@ public class Adivinar2 extends JFrame implements ActionListener {
     private JMenuItem creador;
     public ImageIcon imagenDeLaCarta;
 
-    //variables de control:
+    // variables de control:
 
-	boolean noEsPrimerIntento = false;
+    boolean noEsPrimerIntento = false;
     String cartaPalo, inPalo, paloAnterior = "", entradaNumero;
     int inNumero, cartaNumero, i, indiN, indiS;
-    boolean carta = false; //boleanos que si ambos son true el jugador gano
+    boolean carta = false; // boleanos que si ambos son true el jugador gano
     boolean palo = false;
 
-    //ATRIBUTOS
+    // ATRIBUTOS
 
-    String palos[] = {"corazones", "diamantes", "treboles", "picas"}; // array con los posibles palos y cartas, seran usados para generar la carta aleatoriamente con Math.random
-    int numeros[] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+    String palos[] = { "corazones", "diamantes", "treboles", "picas" }; // array con los posibles palos y cartas, seran
+                                                                        // usados para generar la carta aleatoriamente
+                                                                        // con Math.random
+    int numeros[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
 
-    public Adivinar2() { //constructor 
+    public Adivinar2() { // constructor
 
-        //colores usados varias veces:
+        // colores usados varias veces:
         Color verde = new Color(70, 255, 70);
         Color verde2 = new Color(60, 233, 60);
-        Color negro = new Color(0,0,0);
-        Color gris = new Color(222,222,222);
-        Color blanco = new Color(235,235,235);
+        Color negro = new Color(0, 0, 0);
+        Color gris = new Color(222, 222, 222);
+        Color blanco = new Color(235, 235, 235);
 
-        Font arial1 = new Font ("Arial", 1, 12);
+        Font arial1 = new Font("Arial", 1, 12);
         String welcomeText = "\n Una carta aleatoria de la baraja inglesa ha sido generada.\n\n Intente adividarla, posee 3 intentos."
-        + "\n\n Las cartas posibles son : 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | J | Q | K | A."
-        + "\n Los palos posibles son : diamantes | treboles | corazones | picas."
-        + "\n\n Pulse el boton comenzar para iniciar el juego.";
+                + "\n\n Las cartas posibles son : 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | J | Q | K | A."
+                + "\n Los palos posibles son : diamantes | treboles | corazones | picas."
+                + "\n\n Pulse el boton comenzar para iniciar el juego.";
 
         setLayout(null);
-        
+
         setIconImage(new ImageIcon(getClass().getResource("images/icon.ico")).getImage());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Adivina la carta");
@@ -59,7 +60,6 @@ public class Adivinar2 extends JFrame implements ActionListener {
         acerca.setBackground(gris);
         acerca.setForeground(verde2);
         acerca.setFont(arial1);
-        
 
         creador = new JMenuItem("Programador");
         creador.setForeground(negro);
@@ -81,7 +81,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
         campo1 = new JTextField();
         campo1.setBounds(20, 105, 250, 25);
-        campo1.setBackground(gris); //un tipo de gris.
+        campo1.setBackground(gris); // un tipo de gris.
         campo1.setFont(new Font("Arial", 0, 12));
         campo1.setForeground(negro);
         campo1.setEnabled(false);
@@ -95,13 +95,13 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
         campo2 = new JTextField();
         campo2.setBounds(20, 195, 250, 25);
-        campo2.setBackground(gris); //un tipo de gris.
+        campo2.setBackground(gris); // un tipo de gris.
         campo2.setFont(new Font("Arial", 0, 12));
-        campo2.setForeground(negro); //negro
+        campo2.setForeground(negro); // negro
         campo2.setEnabled(false);
         add(campo2);
 
-        ImageIcon image = new ImageIcon("images/inicio.png"); //label carta imagen
+        ImageIcon image = new ImageIcon("images/inicio.png"); // label carta imagen
         imagen = new JLabel(image);
         imagen.setBounds(357, 60, 65, 98);
         add(imagen);
@@ -128,7 +128,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
         comenzar.setBounds(320, 240, 150, 30);
         comenzar.setBackground(blanco);
         comenzar.setFont(new Font("Arial", 1, 16));
-        comenzar.setForeground(verde); //verde
+        comenzar.setForeground(verde); // verde
         comenzar.addActionListener(this);
         add(comenzar);
 
@@ -141,15 +141,15 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
     public void mostrarCarta(String direccion) {
 
-    /**
-    * muestra la imagen de la carta en el display
-    *
-    * @param <direccion> direccion de la imagen para el ImageIcon
-    * @return void
-    */
+        /**
+         * muestra la imagen de la carta en el display
+         *
+         * @param <direccion> direccion de la imagen para el ImageIcon
+         * @return void
+         */
 
         sacarImagenInicial();
-		
+
         this.imagenDeLaCarta = new ImageIcon(direccion);
         this.laCarta = new JLabel(imagenDeLaCarta);
         this.laCarta.setBounds(357, 60, 65, 98);
@@ -159,7 +159,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
     public void preguntarYmostrarCartas() {
 
-        if(cartaPalo.equals("corazones")){
+        if (cartaPalo.equals("corazones")) {
 
             switch (cartaNumero) {
                 case 2:
@@ -203,9 +203,9 @@ public class Adivinar2 extends JFrame implements ActionListener {
                 default:
                     break;
             }
-        
-        }else if(cartaPalo.equals("treboles")){
-        
+
+        } else if (cartaPalo.equals("treboles")) {
+
             switch (cartaNumero) {
                 case 2:
                     mostrarCarta("images/2t.png");
@@ -249,12 +249,12 @@ public class Adivinar2 extends JFrame implements ActionListener {
                 default:
                     break;
             }
-        
-        }else if(cartaPalo.equals("diamantes")){
-        
+
+        } else if (cartaPalo.equals("diamantes")) {
+
             switch (cartaNumero) {
                 case 2:
-                    mostrarCarta("images/2d.png");
+                    mostrarCarta("images/d.png");
                     break;
                 case 3:
                     mostrarCarta("images/3d.png");
@@ -295,8 +295,8 @@ public class Adivinar2 extends JFrame implements ActionListener {
                 default:
                     break;
             }
-        }else if(cartaPalo.equals("picas")){
-        
+        } else if (cartaPalo.equals("picas")) {
+
             switch (cartaNumero) {
                 case 2:
                     mostrarCarta("images/2p.png");
@@ -355,7 +355,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
     public void setearImagenes() {
 
-        //evita errores
+        // evita errores
         laCarta.setVisible(false);
         ponerImagenInicial();
 
@@ -363,20 +363,18 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
 
-		
         if (e.getSource() == comenzar) {
-				
-			
-			if(noEsPrimerIntento){
 
-            	setearImagenes();
-			}
-			
-			noEsPrimerIntento = true;
-			
-			
-            indiN = (int) (Math.random() * 12);
-            indiS = (int) (Math.random() * 3);
+            if (noEsPrimerIntento) {
+
+                setearImagenes();
+            }
+
+            noEsPrimerIntento = true;
+
+            indiN = (int) (Math.random() * 13); // devolvera un numero entero entre 0 y 12, ya que la funcion random
+                                                // nunca retorna el valor 1.0, sino lo
+            indiS = (int) (Math.random() * 4); // devolvera un numero entero entre 0 y 3
             cartaPalo = palos[indiS];
             cartaNumero = numeros[indiN];
             paloAnterior = "";
@@ -395,25 +393,38 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
         if (e.getSource() == boton) {
 
-            palo = carta = false; //para que no tengan el valor de la jugada anterior
+            palo = carta = false; // para que no tengan el valor de la jugada anterior
 
-			//a continuacionse toman las entradas y se las hace minusculas para mas versatilidad
-            inPalo = campo1.getText().toLowerCase(); //entrada de datos de los TextFields
-            entradaNumero = campo2.getText().toString().toLowerCase(); 
+            // a continuacionse toman las entradas y se las hace minusculas para mas
+            // versatilidad
+            inPalo = campo1.getText().toLowerCase(); // entrada de datos de los TextFields
+            entradaNumero = campo2.getText().toString().toLowerCase();
 
-            if ((!inPalo.equals("treboles") && !inPalo.equals("picas") && !inPalo.equals("corazones") && !inPalo.equals("diamantes"))
-                    || (!entradaNumero.equals("2") && !entradaNumero.equals("3") && !entradaNumero.equals("4") && !entradaNumero.equals("5")//corrobora que este bien escrito lo que se toma
-                    && !entradaNumero.equals("6") && !entradaNumero.equals("7") && !entradaNumero.equals("8") && !entradaNumero.equals("9")
-                    && !entradaNumero.equals("10") && !entradaNumero.equals("j") && !entradaNumero.equals("q") && !entradaNumero.equals("k")
-                    && !entradaNumero.equals("a")) ) {
+            if ((!inPalo.equals("treboles") && !inPalo.equals("picas") && !inPalo.equals("corazones")
+                    && !inPalo.equals("diamantes"))
+                    || (!entradaNumero.equals("2") && !entradaNumero.equals("3") && !entradaNumero.equals("4")
+                            && !entradaNumero.equals("5")// corrobora que este bien escrito lo que se toma
+                            && !entradaNumero.equals("6") && !entradaNumero.equals("7") && !entradaNumero.equals("8")
+                            && !entradaNumero.equals("9")
+                            && !entradaNumero.equals("10") && !entradaNumero.equals("j") && !entradaNumero.equals("q")
+                            && !entradaNumero.equals("k")
+                            && !entradaNumero.equals("a"))) {
 
-                JOptionPane.showMessageDialog(null, "Debes ingresar un palo o numero correcto de la baraja inglesa."); // y si esta mal muestra un mensaje
+                JOptionPane.showMessageDialog(null, "Debes ingresar un palo o numero correcto de la baraja inglesa."); // y
+                                                                                                                       // si
+                                                                                                                       // esta
+                                                                                                                       // mal
+                                                                                                                       // muestra
+                                                                                                                       // un
+                                                                                                                       // mensaje
 
             } else {
 
-                i++; //aumento el indice que verificara cuantas intentos se han producido
+                i++; // aumento el indice que verificara cuantas intentos se han producido
 
-                if (entradaNumero.equals("J") || entradaNumero.equals("j")) { //verifica si es alguna de las letras y se le da su numero hipotetico en valor correspondiente, sino parsea a int.
+                if (entradaNumero.equals("J") || entradaNumero.equals("j")) { // verifica si es alguna de las letras y
+                                                                              // se le da su numero hipotetico en valor
+                                                                              // correspondiente, sino parsea a int.
 
                     inNumero = 11;
 
@@ -434,7 +445,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
                     inNumero = Integer.parseInt(entradaNumero);
                 }
 
-                area.setText("\n Segun su respuesta:"); //pistas
+                area.setText("\n Segun su respuesta:"); // pistas
 
                 if (cartaNumero == inNumero) {
 
@@ -450,7 +461,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
                     area.setText(area.getText() + "\n\n Segun los numeros de las cartas: la carta es menor.");
                 }
 
-                if (cartaPalo.equals(inPalo) ) {
+                if (cartaPalo.equals(inPalo)) {
 
                     area.setText(area.getText() + "\n Segun los palos de las cartas: ese es el palo.");
                     palo = true;
@@ -466,7 +477,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
                     paloAnterior = inPalo;
                 }
 
-                campo1.setText(""); //limpio los TextFields despues de cada intento.
+                campo1.setText(""); // limpio los TextFields despues de cada intento.
                 campo2.setText("");
 
                 if (carta && palo) {
@@ -475,16 +486,18 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
                     area.setText("\n GANASTE.");
                     intentos.setText("Intentos restantes: -");
-                    campo1.setEnabled(false); //vuelvo a desactivar los botones
+                    campo1.setEnabled(false); // vuelvo a desactivar los botones
                     campo2.setEnabled(false);
                     boton.setEnabled(false);
                     comenzar.setEnabled(true);
 
-                } else if (i >= 3) { //if de cuando ya no quedan intentos y se pierde
+                } else if (i >= 3) { // if de cuando ya no quedan intentos y se pierde
 
                     preguntarYmostrarCartas();
 
-                    if (cartaNumero == 11) { //para que se vea bien el mensaje de perdiste en el caso que el numero haya sido una de las letras j,q,k o a, ya que a ellas les corresponden los numero 11,12,13 y 14 dentro de su variable.
+                    if (cartaNumero == 11) { // para que se vea bien el mensaje de perdiste en el caso que el numero
+                                             // haya sido una de las letras j,q,k o a, ya que a ellas les corresponden
+                                             // los numero 11,12,13 y 14 dentro de su variable.
 
                         area.setText("\n Perdiste." + "\n La carta era: J de " + cartaPalo + ".");
 
@@ -514,7 +527,7 @@ public class Adivinar2 extends JFrame implements ActionListener {
 
                 } else {
 
-                    intentos.setText("Intentos restantes: " + (3 - i));//actualizo los intentos restantes
+                    intentos.setText("Intentos restantes: " + (3 - i));// actualizo los intentos restantes
                 }
 
             }
@@ -526,8 +539,8 @@ public class Adivinar2 extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, "2019 | Programador: Jpsq | saluzzojuampi@gmail.com");
         }
     }
-	
-	public static void main(String args[]) {
+
+    public static void main(String args[]) {
 
         Adivinar2 ad = new Adivinar2();
         ad.setBounds(0, 0, 570, 540);
